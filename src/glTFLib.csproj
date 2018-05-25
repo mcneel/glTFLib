@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F95241E-6138-408F-B2C9-83CC78A8D7F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>glTFLib</RootNamespace>
+    <AssemblyName>glTFLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\srcgen\accessor.schema.cs">
+      <Link>glTFGen\accessor.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\accessor.sparse.indices.schema.cs">
+      <Link>glTFGen\accessor.sparse.indices.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\accessor.sparse.schema.cs">
+      <Link>glTFGen\accessor.sparse.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\accessor.sparse.values.schema.cs">
+      <Link>glTFGen\accessor.sparse.values.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\animation.channel.schema.cs">
+      <Link>glTFGen\animation.channel.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\animation.channel.target.schema.cs">
+      <Link>glTFGen\animation.channel.target.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\animation.sampler.schema.cs">
+      <Link>glTFGen\animation.sampler.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\animation.schema.cs">
+      <Link>glTFGen\animation.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\asset.schema.cs">
+      <Link>glTFGen\asset.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\buffer.schema.cs">
+      <Link>glTFGen\buffer.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\bufferView.schema.cs">
+      <Link>glTFGen\bufferView.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\camera.orthographic.schema.cs">
+      <Link>glTFGen\camera.orthographic.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\camera.perspective.schema.cs">
+      <Link>glTFGen\camera.perspective.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\camera.schema.cs">
+      <Link>glTFGen\camera.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\extension.schema.cs">
+      <Link>glTFGen\extension.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\extras.schema.cs">
+      <Link>glTFGen\extras.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\glTFChildOfRootProperty.schema.cs">
+      <Link>glTFGen\glTFChildOfRootProperty.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\glTFid.schema.cs">
+      <Link>glTFGen\glTFid.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\glTFProperty.schema.cs">
+      <Link>glTFGen\glTFProperty.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\image.schema.cs">
+      <Link>glTFGen\image.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\material.normalTextureInfo.schema.cs">
+      <Link>glTFGen\material.normalTextureInfo.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\material.occlusionTextureInfo.schema.cs">
+      <Link>glTFGen\material.occlusionTextureInfo.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\material.pbrMetallicRoughness.schema.cs">
+      <Link>glTFGen\material.pbrMetallicRoughness.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\material.schema.cs">
+      <Link>glTFGen\material.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\mesh.primitive.schema.cs">
+      <Link>glTFGen\mesh.primitive.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\mesh.schema.cs">
+      <Link>glTFGen\mesh.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\node.schema.cs">
+      <Link>glTFGen\node.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\sampler.schema.cs">
+      <Link>glTFGen\sampler.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\scene.schema.cs">
+      <Link>glTFGen\scene.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\skin.schema.cs">
+      <Link>glTFGen\skin.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\texture.schema.cs">
+      <Link>glTFGen\texture.schema.cs</Link>
+    </Compile>
+    <Compile Include="..\srcgen\textureInfo.schema.cs">
+      <Link>glTFGen\textureInfo.schema.cs</Link>
+    </Compile>
+    <Compile Include="glTF\Accessor.cs" />
+    <Compile Include="glTF\Asset.cs" />
+    <Compile Include="glTF\Camera.cs" />
+    <Compile Include="glTF\EnumAttributeProperty.cs" />
+    <Compile Include="glTF\Buffer.cs" />
+    <Compile Include="glTF\BufferView.cs" />
+    <Compile Include="glTF\EnumComponentType.cs" />
+    <Compile Include="glTF\Image.cs" />
+    <Compile Include="glTF\Node.cs" />
+    <Compile Include="glTF\Primitive.cs" />
+    <Compile Include="glTF\Sampler.cs" />
+    <Compile Include="glTF\Skin.cs" />
+    <Compile Include="glTF\Target.cs" />
+    <Compile Include="glTF\Texture.cs" />
+    <Compile Include="glTF\EnumType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
