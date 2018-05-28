@@ -7,7 +7,9 @@ namespace glTFLibExample
         static void Main(string[] args)
         {
             var gltf = new GlTF();
-            //gltf.
+            
+
+            
         }
     }
 }

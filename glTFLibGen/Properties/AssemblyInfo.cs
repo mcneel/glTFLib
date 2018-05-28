@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("glTFLib")]
+[assembly: AssemblyTitle("glTFLibGen")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Robert McNeel & Associates")]
-[assembly: AssemblyProduct("glTFLib")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("glTFLibGen")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2f95241e-6138-408f-b2c9-83cc78a8d7f5")]
+[assembly: Guid("940ded8e-05fd-45ac-b6fa-213dd31165ce")]
 
 // Version information for an assembly consists of the following four values:
 //
