@@ -44,13 +44,13 @@ namespace glTFLib
         /// An array of accessors.
         /// </summary>
         [JsonProperty("accessors", NullValueHandling = NullValueHandling.Ignore)]
-        public Accessor[] Accessors { get; set; }
+        public List<Accessor> Accessors { get; set; }
 
         /// <summary>
         /// An array of keyframe animations.
         /// </summary>
         [JsonProperty("animations", NullValueHandling = NullValueHandling.Ignore)]
-        public Animation[] Animations { get; set; }
+        public List<Animation> Animations { get; set; }
 
         /// <summary>
         /// Metadata about the glTF asset.
@@ -62,19 +62,19 @@ namespace glTFLib
         /// An array of buffers.
         /// </summary>
         [JsonProperty("buffers", NullValueHandling = NullValueHandling.Ignore)]
-        public Buffer[] Buffers { get; set; }
+        public List<Buffer> Buffers { get; set; }
 
         /// <summary>
         /// An array of bufferViews.
         /// </summary>
         [JsonProperty("bufferViews", NullValueHandling = NullValueHandling.Ignore)]
-        public BufferView[] BufferViews { get; set; }
+        public List<BufferView> BufferViews { get; set; }
 
         /// <summary>
         /// An array of cameras.
         /// </summary>
         [JsonProperty("cameras", NullValueHandling = NullValueHandling.Ignore)]
-        public Camera[] Cameras { get; set; }
+        public List<Camera> Cameras { get; set; }
 
         [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
@@ -83,13 +83,13 @@ namespace glTFLib
         /// Names of glTF extensions required to properly load this asset.
         /// </summary>
         [JsonProperty("extensionsRequired", NullValueHandling = NullValueHandling.Ignore)]
-        public string[] ExtensionsRequired { get; set; }
+        public List<string> ExtensionsRequired { get; set; }
 
         /// <summary>
         /// Names of glTF extensions used somewhere in this asset.
         /// </summary>
         [JsonProperty("extensionsUsed", NullValueHandling = NullValueHandling.Ignore)]
-        public string[] ExtensionsUsed { get; set; }
+        public List<string> ExtensionsUsed { get; set; }
 
         [JsonProperty("extras")]
         public object Extras { get; set; }
@@ -98,31 +98,31 @@ namespace glTFLib
         /// An array of images.
         /// </summary>
         [JsonProperty("images", NullValueHandling = NullValueHandling.Ignore)]
-        public Image[] Images { get; set; }
+        public List<Image> Images { get; set; }
 
         /// <summary>
         /// An array of materials.
         /// </summary>
         [JsonProperty("materials", NullValueHandling = NullValueHandling.Ignore)]
-        public Material[] Materials { get; set; }
+        public List<Material> Materials { get; set; }
 
         /// <summary>
         /// An array of meshes.
         /// </summary>
         [JsonProperty("meshes", NullValueHandling = NullValueHandling.Ignore)]
-        public Mesh[] Meshes { get; set; }
+        public List<Mesh> Meshes { get; set; }
 
         /// <summary>
         /// An array of nodes.
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
-        public Node[] Nodes { get; set; }
+        public List<Node> Nodes { get; set; }
 
         /// <summary>
         /// An array of samplers.
         /// </summary>
         [JsonProperty("samplers", NullValueHandling = NullValueHandling.Ignore)]
-        public Sampler[] Samplers { get; set; }
+        public List<Sampler> Samplers { get; set; }
 
         /// <summary>
         /// The index of the default scene.
@@ -134,19 +134,19 @@ namespace glTFLib
         /// An array of scenes.
         /// </summary>
         [JsonProperty("scenes", NullValueHandling = NullValueHandling.Ignore)]
-        public Scene[] Scenes { get; set; }
+        public List<Scene> Scenes { get; set; }
 
         /// <summary>
         /// An array of skins.
         /// </summary>
         [JsonProperty("skins", NullValueHandling = NullValueHandling.Ignore)]
-        public Skin[] Skins { get; set; }
+        public List<Skin> Skins { get; set; }
 
         /// <summary>
         /// An array of textures.
         /// </summary>
         [JsonProperty("textures", NullValueHandling = NullValueHandling.Ignore)]
-        public Texture[] Textures { get; set; }
+        public List<Texture> Textures { get; set; }
     }
 
     /// <summary>
@@ -192,13 +192,13 @@ namespace glTFLib
         /// Maximum value of each component in this attribute.
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Max { get; set; }
+        public List<double> Max { get; set; }
 
         /// <summary>
         /// Minimum value of each component in this attribute.
         /// </summary>
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Min { get; set; }
+        public List<double> Min { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
@@ -340,7 +340,7 @@ namespace glTFLib
         /// Different channels of the same animation can't have equal targets.
         /// </summary>
         [JsonProperty("channels")]
-        public AnimationChannel[] Channels { get; set; }
+        public List<AnimationChannel> Channels { get; set; }
 
         [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
@@ -359,7 +359,7 @@ namespace glTFLib
         /// algorithm to define a keyframe graph (but not its target).
         /// </summary>
         [JsonProperty("samplers")]
-        public AnimationSampler[] Samplers { get; set; }
+        public List<AnimationSampler> Samplers { get; set; }
     }
 
     /// <summary>
@@ -760,7 +760,7 @@ namespace glTFLib
         /// The emissive color of the material.
         /// </summary>
         [JsonProperty("emissiveFactor", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] EmissiveFactor { get; set; }
+        public List<double> EmissiveFactor { get; set; }
 
         /// <summary>
         /// The emissive map texture.
@@ -917,7 +917,7 @@ namespace glTFLib
         /// The material's base color factor.
         /// </summary>
         [JsonProperty("baseColorFactor", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] BaseColorFactor { get; set; }
+        public List<double> BaseColorFactor { get; set; }
 
         /// <summary>
         /// The base color texture.
@@ -974,13 +974,13 @@ namespace glTFLib
         /// An array of primitives, each defining geometry to be rendered with a material.
         /// </summary>
         [JsonProperty("primitives")]
-        public MeshPrimitive[] Primitives { get; set; }
+        public List<MeshPrimitive> Primitives { get; set; }
 
         /// <summary>
         /// Array of weights to be applied to the Morph Targets.
         /// </summary>
         [JsonProperty("weights", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Weights { get; set; }
+        public List<double> Weights { get; set; }
     }
 
     /// <summary>
@@ -1026,7 +1026,7 @@ namespace glTFLib
         /// `POSITION`, `NORMAL`, and `TANGENT` supported) to their deviations in the Morph Target.
         /// </summary>
         [JsonProperty("targets", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, long>[] Targets { get; set; }
+        public List<Dictionary<string, long>> Targets { get; set; }
     }
 
     /// <summary>
@@ -1053,7 +1053,7 @@ namespace glTFLib
         /// The indices of this node's children.
         /// </summary>
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
-        public long[] Children { get; set; }
+        public List<long> Children { get; set; }
 
         [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
@@ -1065,7 +1065,7 @@ namespace glTFLib
         /// A floating-point 4x4 transformation matrix stored in column-major order.
         /// </summary>
         [JsonProperty("matrix", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Matrix { get; set; }
+        public List<double> Matrix { get; set; }
 
         /// <summary>
         /// The index of the mesh in this node.
@@ -1083,13 +1083,13 @@ namespace glTFLib
         /// The node's unit quaternion rotation in the order (x, y, z, w), where w is the scalar.
         /// </summary>
         [JsonProperty("rotation", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Rotation { get; set; }
+        public List<double> Rotation { get; set; }
 
         /// <summary>
         /// The node's non-uniform scale, given as the scaling factors along the x, y, and z axes.
         /// </summary>
         [JsonProperty("scale", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Scale { get; set; }
+        public List<double> Scale { get; set; }
 
         /// <summary>
         /// The index of the skin referenced by this node.
@@ -1101,14 +1101,14 @@ namespace glTFLib
         /// The node's translation along the x, y, and z axes.
         /// </summary>
         [JsonProperty("translation", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Translation { get; set; }
+        public List<double> Translation { get; set; }
 
         /// <summary>
         /// The weights of the instantiated Morph Target. Number of elements must match number of
         /// Morph Targets of used mesh.
         /// </summary>
         [JsonProperty("weights", NullValueHandling = NullValueHandling.Ignore)]
-        public double[] Weights { get; set; }
+        public List<double> Weights { get; set; }
     }
 
     /// <summary>
@@ -1178,7 +1178,7 @@ namespace glTFLib
         /// The indices of each root node.
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
-        public long[] Nodes { get; set; }
+        public List<long> Nodes { get; set; }
     }
 
     /// <summary>
@@ -1206,7 +1206,7 @@ namespace glTFLib
         /// Indices of skeleton nodes, used as joints in this skin.
         /// </summary>
         [JsonProperty("joints")]
-        public long[] Joints { get; set; }
+        public List<long> Joints { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
