@@ -599,13 +599,13 @@ namespace glTFLib
         /// An orthographic camera containing properties to create an orthographic projection matrix.
         /// </summary>
         [JsonProperty("orthographic", NullValueHandling = NullValueHandling.Ignore)]
-        public StickyExtras Orthographic { get; set; }
+        public CameraOrthographic Orthographic { get; set; }
 
         /// <summary>
         /// A perspective camera containing properties to create a perspective projection matrix.
         /// </summary>
         [JsonProperty("perspective", NullValueHandling = NullValueHandling.Ignore)]
-        public IndigoExtras Perspective { get; set; }
+        public CameraPerspective Perspective { get; set; }
 
         /// <summary>
         /// Specifies if the camera uses a perspective or orthographic projection.
@@ -619,7 +619,7 @@ namespace glTFLib
     ///
     /// An orthographic camera containing properties to create an orthographic projection matrix.
     /// </summary>
-    public partial class StickyExtras
+    public partial class CameraOrthographic
     {
         [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
@@ -658,7 +658,7 @@ namespace glTFLib
     ///
     /// A perspective camera containing properties to create a perspective projection matrix.
     /// </summary>
-    public partial class IndigoExtras
+    public partial class CameraPerspective
     {
         /// <summary>
         /// The floating-point aspect ratio of the field of view.
