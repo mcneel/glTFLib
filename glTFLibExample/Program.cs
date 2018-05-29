@@ -28,7 +28,8 @@ namespace glTFLibExample
                 Perspective = new CameraPerspective
                 {
                     Znear = 1.0,
-                    Yfov = 35.0
+                    Yfov = 35.0,
+                    AspectRatio = 10
                 }
             };
 
