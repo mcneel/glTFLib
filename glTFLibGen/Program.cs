@@ -13,6 +13,8 @@ namespace glTFLibGen
     {
         static void Main(string[] args)
         {
+            //Setup 
+
             var tmpDir = GetTemporaryDirectory();
 
             var psi = new ProcessStartInfo
@@ -32,74 +34,59 @@ namespace glTFLibGen
 
             var run = Process.Start(psi);
 
-            var paths = Directory.GetFiles(@".\..\..\..\glTF\specification\2.0\schema");
+            //Copy schema files to tmpDir
 
-            var schemaPaths = new List<string>();
+            var paths = Directory.GetFiles(@".\..\..\..\glTF\specification\2.0\schema");
+            var pathsEx = Directory.GetFiles(@".\..\..\..\glTF\extensions", "*.schema.json", SearchOption.AllDirectories);
+
+            var arrValuesPath = @".\..\..\..\glTF\specification\1.0\schema\arrayValues.schema.json";
+
+            CopyFile(arrValuesPath, tmpDir);
 
             foreach (var path in paths)
-            {
-                var fileName = Path.GetFileName(path);
-                var destinationFileName = Path.Combine(tmpDir, fileName);
-                File.Copy(path, destinationFileName);
-                schemaPaths.Add(destinationFileName);
-
-                Console.WriteLine(path);
-            }
-
-            var pathsEx = Directory.GetFiles(@".\..\..\..\glTF\extensions", "*.schema.json", SearchOption.AllDirectories);
+                CopyFile(path, tmpDir);
 
             var command = "";
 
             var extensionPaths = new List<string>();
-            foreach (var path in pathsEx)
-            {
-                var fileName = Path.GetFileName(path);
-                var destinationFileName = Path.Combine(tmpDir, fileName);
-                File.Copy(path, destinationFileName);
-                extensionPaths.Add(destinationFileName);
 
-            }
+            foreach (var path in pathsEx)
+                extensionPaths.Add(CopyFile(path, tmpDir));
+
+            //CodeGen
 
             command = "cd " + tmpDir;
 
             run.StandardInput.WriteLine(command);
 
-            command = "quicktype -s schema glTF.schema.json -l csharp -o GlTF_auto.cs --namespace glTFLib --csharp-version 6 --array-type list --number-type double --features complete --any-type object --no-combine-classes --top-level GlTF";
+            command = "quicktype -s schema glTF.schema.json -l csharp -o glTF-api.cs --namespace glTFLib --csharp-version 6 --array-type list --number-type double --features complete --any-type object --no-combine-classes --top-level GlTF";
 
             run.StandardInput.WriteLine(command);
 
             foreach (var path in extensionPaths)
             {
                 var fileName = Path.GetFileName(path);
-                var fileNameCS = Path.ChangeExtension(fileName, ".cs");
                 var parts = fileName.Split('.');
                 var topLevel = "";
                 for (int i = 0; i < parts.Length - 2; i++)
                     topLevel += parts[i].First().ToString().ToUpper() + parts[i].Substring(1);
 
-                command = "quicktype -s schema "+ fileName +" -l csharp -o "+ fileNameCS + " --namespace glTFLib --csharp-version 6 --array-type list --number-type double --features complete --any-type object --no-combine-classes --top-level " + topLevel;
+                var fileNameCS = "ext." + topLevel + ".cs";
+
+                command = "quicktype -s schema "+ fileName +" -l csharp -o "+ fileNameCS + " --namespace glTFLib.Extensions --csharp-version 6 --array-type list --number-type double --features complete --any-type object --no-combine-classes --top-level " + topLevel;
+
                 run.StandardInput.WriteLine(command);
             }
 
-            var exe = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            //Copy generated files to gen directory.
 
             var pathsGen = Directory.GetFiles(tmpDir, "*.cs");
 
             foreach (var path in pathsGen)
-            {
-                var fileName = Path.GetFileName(path);
-                var destinationFileName = Path.Combine(genDir, fileName);
-                File.Copy(path, destinationFileName, true);
-            }
+                CopyFile(path, genDir);
 
+            //run.WaitForExit();
 
-            command = "cd " + genDir;
-
-            run.StandardInput.WriteLine(command);
-
-            run.WaitForExit();
-
-            //Console.ReadKey();
         }
 
         public static string GetTemporaryDirectory()
@@ -107,6 +94,14 @@ namespace glTFLibGen
             string tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
             Directory.CreateDirectory(tempDirectory);
             return tempDirectory;
+        }
+
+        public static string CopyFile(string path, string destDir)
+        {
+            var fileName = Path.GetFileName(path);
+            var destinationFileName = Path.Combine(destDir, fileName);
+            File.Copy(path, destinationFileName, true);
+            return destinationFileName;
         }
 
 
