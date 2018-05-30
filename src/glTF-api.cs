@@ -43,109 +43,90 @@ namespace glTFLib
         /// <summary>
         /// An array of accessors.
         /// </summary>
-        [JsonProperty("accessors", NullValueHandling = NullValueHandling.Ignore)]
         public List<Accessor> Accessors { get; set; }
 
         /// <summary>
         /// An array of keyframe animations.
         /// </summary>
-        [JsonProperty("animations", NullValueHandling = NullValueHandling.Ignore)]
         public List<Animation> Animations { get; set; }
 
         /// <summary>
         /// Metadata about the glTF asset.
         /// </summary>
-        [JsonProperty("asset")]
         public AssetClass Asset { get; set; }
 
         /// <summary>
         /// An array of buffers.
         /// </summary>
-        [JsonProperty("buffers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Buffer> Buffers { get; set; }
 
         /// <summary>
         /// An array of bufferViews.
         /// </summary>
-        [JsonProperty("bufferViews", NullValueHandling = NullValueHandling.Ignore)]
         public List<BufferView> BufferViews { get; set; }
 
         /// <summary>
         /// An array of cameras.
         /// </summary>
-        [JsonProperty("cameras", NullValueHandling = NullValueHandling.Ignore)]
         public List<Camera> Cameras { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
         /// <summary>
         /// Names of glTF extensions required to properly load this asset.
         /// </summary>
-        [JsonProperty("extensionsRequired", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ExtensionsRequired { get; set; }
 
         /// <summary>
         /// Names of glTF extensions used somewhere in this asset.
         /// </summary>
-        [JsonProperty("extensionsUsed", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ExtensionsUsed { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// An array of images.
         /// </summary>
-        [JsonProperty("images", NullValueHandling = NullValueHandling.Ignore)]
         public List<Image> Images { get; set; }
 
         /// <summary>
         /// An array of materials.
         /// </summary>
-        [JsonProperty("materials", NullValueHandling = NullValueHandling.Ignore)]
         public List<Material> Materials { get; set; }
 
         /// <summary>
         /// An array of meshes.
         /// </summary>
-        [JsonProperty("meshes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Mesh> Meshes { get; set; }
 
         /// <summary>
         /// An array of nodes.
         /// </summary>
-        [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Node> Nodes { get; set; }
 
         /// <summary>
         /// An array of samplers.
         /// </summary>
-        [JsonProperty("samplers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Sampler> Samplers { get; set; }
 
         /// <summary>
         /// The index of the default scene.
         /// </summary>
-        [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
         public long? Scene { get; set; }
 
         /// <summary>
         /// An array of scenes.
         /// </summary>
-        [JsonProperty("scenes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Scene> Scenes { get; set; }
 
         /// <summary>
         /// An array of skins.
         /// </summary>
-        [JsonProperty("skins", NullValueHandling = NullValueHandling.Ignore)]
         public List<Skin> Skins { get; set; }
 
         /// <summary>
         /// An array of textures.
         /// </summary>
-        [JsonProperty("textures", NullValueHandling = NullValueHandling.Ignore)]
         public List<Texture> Textures { get; set; }
     }
 
@@ -161,67 +142,55 @@ namespace glTFLib
         /// <summary>
         /// The index of the bufferView.
         /// </summary>
-        [JsonProperty("bufferView", NullValueHandling = NullValueHandling.Ignore)]
         public long? BufferView { get; set; }
 
         /// <summary>
         /// The offset relative to the start of the bufferView in bytes.
         /// </summary>
-        [JsonProperty("byteOffset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ByteOffset { get; set; }
 
         /// <summary>
         /// The datatype of components in the attribute.
         /// </summary>
-        [JsonProperty("componentType")]
         public Extras ComponentType { get; set; }
 
         /// <summary>
         /// The number of attributes referenced by this accessor.
         /// </summary>
-        [JsonProperty("count")]
         public long Count { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// Maximum value of each component in this attribute.
         /// </summary>
-        [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Max { get; set; }
 
         /// <summary>
         /// Minimum value of each component in this attribute.
         /// </summary>
-        [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Min { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// Specifies whether integer data values should be normalized.
         /// </summary>
-        [JsonProperty("normalized", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Normalized { get; set; }
 
         /// <summary>
         /// Sparse storage of attributes that deviate from their initialization value.
         /// </summary>
-        [JsonProperty("sparse", NullValueHandling = NullValueHandling.Ignore)]
         public PurpleExtras Sparse { get; set; }
 
         /// <summary>
         /// Specifies if the attribute is a scalar, vector, or matrix.
         /// </summary>
-        [JsonProperty("type")]
         public string Type { get; set; }
     }
 
@@ -235,20 +204,16 @@ namespace glTFLib
         /// <summary>
         /// Number of entries stored in the sparse array.
         /// </summary>
-        [JsonProperty("count")]
         public long Count { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// Index array of size `count` that points to those accessor attributes that deviate from
         /// their initialization value. Indices must strictly increase.
         /// </summary>
-        [JsonProperty("indices")]
         public FluffyExtras Indices { get; set; }
 
         /// <summary>
@@ -256,7 +221,6 @@ namespace glTFLib
         /// attributes pointed by `indices`. Substituted values must have the same `componentType`
         /// and number of components as the base accessor.
         /// </summary>
-        [JsonProperty("values")]
         public TentacledExtras Values { get; set; }
     }
 
@@ -274,25 +238,20 @@ namespace glTFLib
         /// The index of the bufferView with sparse indices. Referenced bufferView can't have
         /// ARRAY_BUFFER or ELEMENT_ARRAY_BUFFER target.
         /// </summary>
-        [JsonProperty("bufferView")]
         public long BufferView { get; set; }
 
         /// <summary>
         /// The offset relative to the start of the bufferView in bytes. Must be aligned.
         /// </summary>
-        [JsonProperty("byteOffset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ByteOffset { get; set; }
 
         /// <summary>
         /// The indices data type.
         /// </summary>
-        [JsonProperty("componentType")]
         public Extras ComponentType { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
     }
 
@@ -312,19 +271,15 @@ namespace glTFLib
         /// The index of the bufferView with sparse values. Referenced bufferView can't have
         /// ARRAY_BUFFER or ELEMENT_ARRAY_BUFFER target.
         /// </summary>
-        [JsonProperty("bufferView")]
         public long BufferView { get; set; }
 
         /// <summary>
         /// The offset relative to the start of the bufferView in bytes. Must be aligned.
         /// </summary>
-        [JsonProperty("byteOffset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ByteOffset { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
     }
 
@@ -339,26 +294,21 @@ namespace glTFLib
         /// An array of channels, each of which targets an animation's sampler at a node's property.
         /// Different channels of the same animation can't have equal targets.
         /// </summary>
-        [JsonProperty("channels")]
         public List<AnimationChannel> Channels { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// An array of samplers that combines input and output accessors with an interpolation
         /// algorithm to define a keyframe graph (but not its target).
         /// </summary>
-        [JsonProperty("samplers")]
         public List<AnimationSampler> Samplers { get; set; }
     }
 
@@ -370,22 +320,18 @@ namespace glTFLib
     /// </summary>
     public partial class AnimationChannel
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of a sampler in this animation used to compute the value for the target.
         /// </summary>
-        [JsonProperty("sampler")]
         public long Sampler { get; set; }
 
         /// <summary>
         /// The index of the node and TRS property to target.
         /// </summary>
-        [JsonProperty("target")]
         public AnimationChannelTargetClass Target { get; set; }
     }
 
@@ -398,16 +344,13 @@ namespace glTFLib
     /// </summary>
     public partial class AnimationChannelTargetClass
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of the node to target.
         /// </summary>
-        [JsonProperty("node", NullValueHandling = NullValueHandling.Ignore)]
         public long? Node { get; set; }
 
         /// <summary>
@@ -417,7 +360,6 @@ namespace glTFLib
         /// are a quaternion in the order (x, y, z, w), where w is the scalar. For the "scale"
         /// property, the values are the scaling factors along the x, y, and z axes.
         /// </summary>
-        [JsonProperty("path")]
         public string Path { get; set; }
     }
 
@@ -430,28 +372,23 @@ namespace glTFLib
     /// </summary>
     public partial class AnimationSampler
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of an accessor containing keyframe input values, e.g., time.
         /// </summary>
-        [JsonProperty("input")]
         public long Input { get; set; }
 
         /// <summary>
         /// Interpolation algorithm.
         /// </summary>
-        [JsonProperty("interpolation", NullValueHandling = NullValueHandling.Ignore)]
         public string Interpolation { get; set; }
 
         /// <summary>
         /// The index of an accessor, containing keyframe output values.
         /// </summary>
-        [JsonProperty("output")]
         public long Output { get; set; }
     }
 
@@ -465,31 +402,25 @@ namespace glTFLib
         /// <summary>
         /// A copyright message suitable for display to credit the content creator.
         /// </summary>
-        [JsonProperty("copyright", NullValueHandling = NullValueHandling.Ignore)]
         public string Copyright { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// Tool that generated this glTF model.  Useful for debugging.
         /// </summary>
-        [JsonProperty("generator", NullValueHandling = NullValueHandling.Ignore)]
         public string Generator { get; set; }
 
         /// <summary>
         /// The minimum glTF version that this asset targets.
         /// </summary>
-        [JsonProperty("minVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string MinVersion { get; set; }
 
         /// <summary>
         /// The glTF version that this asset targets.
         /// </summary>
-        [JsonProperty("version")]
         public string Version { get; set; }
     }
 
@@ -503,43 +434,35 @@ namespace glTFLib
         /// <summary>
         /// The index of the buffer.
         /// </summary>
-        [JsonProperty("buffer")]
         public long Buffer { get; set; }
 
         /// <summary>
         /// The length of the bufferView in bytes.
         /// </summary>
-        [JsonProperty("byteLength")]
         public long ByteLength { get; set; }
 
         /// <summary>
         /// The offset into the buffer in bytes.
         /// </summary>
-        [JsonProperty("byteOffset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ByteOffset { get; set; }
 
         /// <summary>
         /// The stride, in bytes.
         /// </summary>
-        [JsonProperty("byteStride", NullValueHandling = NullValueHandling.Ignore)]
         public long? ByteStride { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The target that the GPU buffer should be bound to.
         /// </summary>
-        [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? Target { get; set; }
     }
 
@@ -553,25 +476,20 @@ namespace glTFLib
         /// <summary>
         /// The length of the buffer in bytes.
         /// </summary>
-        [JsonProperty("byteLength")]
         public long ByteLength { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The uri of the buffer.
         /// </summary>
-        [JsonProperty("uri", NullValueHandling = NullValueHandling.Ignore)]
         public string Uri { get; set; }
     }
 
@@ -583,34 +501,28 @@ namespace glTFLib
     /// </summary>
     public partial class Camera
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// An orthographic camera containing properties to create an orthographic projection matrix.
         /// </summary>
-        [JsonProperty("orthographic", NullValueHandling = NullValueHandling.Ignore)]
         public CameraOrthographic Orthographic { get; set; }
 
         /// <summary>
         /// A perspective camera containing properties to create a perspective projection matrix.
         /// </summary>
-        [JsonProperty("perspective", NullValueHandling = NullValueHandling.Ignore)]
         public CameraPerspective Perspective { get; set; }
 
         /// <summary>
         /// Specifies if the camera uses a perspective or orthographic projection.
         /// </summary>
-        [JsonProperty("type")]
         public string Type { get; set; }
     }
 
@@ -621,35 +533,29 @@ namespace glTFLib
     /// </summary>
     public partial class CameraOrthographic
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The floating-point horizontal magnification of the view. Must not be zero.
         /// </summary>
-        [JsonProperty("xmag")]
         public double Xmag { get; set; }
 
         /// <summary>
         /// The floating-point vertical magnification of the view. Must not be zero.
         /// </summary>
-        [JsonProperty("ymag")]
         public double Ymag { get; set; }
 
         /// <summary>
         /// The floating-point distance to the far clipping plane. `zfar` must be greater than
         /// `znear`.
         /// </summary>
-        [JsonProperty("zfar")]
         public double Zfar { get; set; }
 
         /// <summary>
         /// The floating-point distance to the near clipping plane.
         /// </summary>
-        [JsonProperty("znear")]
         public double Znear { get; set; }
     }
 
@@ -663,31 +569,25 @@ namespace glTFLib
         /// <summary>
         /// The floating-point aspect ratio of the field of view.
         /// </summary>
-        [JsonProperty("aspectRatio", NullValueHandling = NullValueHandling.Ignore)]
         public double? AspectRatio { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The floating-point vertical field of view in radians.
         /// </summary>
-        [JsonProperty("yfov")]
         public double Yfov { get; set; }
 
         /// <summary>
         /// The floating-point distance to the far clipping plane.
         /// </summary>
-        [JsonProperty("zfar", NullValueHandling = NullValueHandling.Ignore)]
         public double? Zfar { get; set; }
 
         /// <summary>
         /// The floating-point distance to the near clipping plane.
         /// </summary>
-        [JsonProperty("znear")]
         public double Znear { get; set; }
     }
 
@@ -703,31 +603,25 @@ namespace glTFLib
         /// The index of the bufferView that contains the image. Use this instead of the image's uri
         /// property.
         /// </summary>
-        [JsonProperty("bufferView", NullValueHandling = NullValueHandling.Ignore)]
         public long? BufferView { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The image's MIME type.
         /// </summary>
-        [JsonProperty("mimeType", NullValueHandling = NullValueHandling.Ignore)]
         public string MimeType { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The uri of the image.
         /// </summary>
-        [JsonProperty("uri", NullValueHandling = NullValueHandling.Ignore)]
         public string Uri { get; set; }
     }
 
@@ -741,55 +635,45 @@ namespace glTFLib
         /// <summary>
         /// The alpha cutoff value of the material.
         /// </summary>
-        [JsonProperty("alphaCutoff", NullValueHandling = NullValueHandling.Ignore)]
         public double? AlphaCutoff { get; set; }
 
         /// <summary>
         /// The alpha rendering mode of the material.
         /// </summary>
-        [JsonProperty("alphaMode", NullValueHandling = NullValueHandling.Ignore)]
         public string AlphaMode { get; set; }
 
         /// <summary>
         /// Specifies whether the material is double sided.
         /// </summary>
-        [JsonProperty("doubleSided", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DoubleSided { get; set; }
 
         /// <summary>
         /// The emissive color of the material.
         /// </summary>
-        [JsonProperty("emissiveFactor", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> EmissiveFactor { get; set; }
 
         /// <summary>
         /// The emissive map texture.
         /// </summary>
-        [JsonProperty("emissiveTexture", NullValueHandling = NullValueHandling.Ignore)]
         public IndecentExtras EmissiveTexture { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The normal map texture.
         /// </summary>
-        [JsonProperty("normalTexture", NullValueHandling = NullValueHandling.Ignore)]
         public MaterialNormalTextureInfoClass NormalTexture { get; set; }
 
         /// <summary>
         /// The occlusion map texture.
         /// </summary>
-        [JsonProperty("occlusionTexture", NullValueHandling = NullValueHandling.Ignore)]
         public MaterialOcclusionTextureInfoClass OcclusionTexture { get; set; }
 
         /// <summary>
@@ -797,7 +681,6 @@ namespace glTFLib
         /// from Physically-Based Rendering (PBR) methodology. When not specified, all the default
         /// values of `pbrMetallicRoughness` apply.
         /// </summary>
-        [JsonProperty("pbrMetallicRoughness", NullValueHandling = NullValueHandling.Ignore)]
         public HilariousExtras PbrMetallicRoughness { get; set; }
     }
 
@@ -814,22 +697,18 @@ namespace glTFLib
     /// </summary>
     public partial class IndecentExtras
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of the texture.
         /// </summary>
-        [JsonProperty("index")]
         public long Index { get; set; }
 
         /// <summary>
         /// The set index of texture's TEXCOORD attribute used for texture coordinate mapping.
         /// </summary>
-        [JsonProperty("texCoord", NullValueHandling = NullValueHandling.Ignore)]
         public long? TexCoord { get; set; }
     }
 
@@ -842,28 +721,23 @@ namespace glTFLib
     /// </summary>
     public partial class MaterialNormalTextureInfoClass
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of the texture.
         /// </summary>
-        [JsonProperty("index")]
         public long Index { get; set; }
 
         /// <summary>
         /// The scalar multiplier applied to each normal vector of the normal texture.
         /// </summary>
-        [JsonProperty("scale", NullValueHandling = NullValueHandling.Ignore)]
         public double? Scale { get; set; }
 
         /// <summary>
         /// The set index of texture's TEXCOORD attribute used for texture coordinate mapping.
         /// </summary>
-        [JsonProperty("texCoord", NullValueHandling = NullValueHandling.Ignore)]
         public long? TexCoord { get; set; }
     }
 
@@ -876,28 +750,23 @@ namespace glTFLib
     /// </summary>
     public partial class MaterialOcclusionTextureInfoClass
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of the texture.
         /// </summary>
-        [JsonProperty("index")]
         public long Index { get; set; }
 
         /// <summary>
         /// A scalar multiplier controlling the amount of occlusion applied.
         /// </summary>
-        [JsonProperty("strength", NullValueHandling = NullValueHandling.Ignore)]
         public double? Strength { get; set; }
 
         /// <summary>
         /// The set index of texture's TEXCOORD attribute used for texture coordinate mapping.
         /// </summary>
-        [JsonProperty("texCoord", NullValueHandling = NullValueHandling.Ignore)]
         public long? TexCoord { get; set; }
     }
 
@@ -916,37 +785,30 @@ namespace glTFLib
         /// <summary>
         /// The material's base color factor.
         /// </summary>
-        [JsonProperty("baseColorFactor", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> BaseColorFactor { get; set; }
 
         /// <summary>
         /// The base color texture.
         /// </summary>
-        [JsonProperty("baseColorTexture", NullValueHandling = NullValueHandling.Ignore)]
         public IndecentExtras BaseColorTexture { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The metalness of the material.
         /// </summary>
-        [JsonProperty("metallicFactor", NullValueHandling = NullValueHandling.Ignore)]
         public double? MetallicFactor { get; set; }
 
         /// <summary>
         /// The metallic-roughness texture.
         /// </summary>
-        [JsonProperty("metallicRoughnessTexture", NullValueHandling = NullValueHandling.Ignore)]
         public IndecentExtras MetallicRoughnessTexture { get; set; }
 
         /// <summary>
         /// The roughness of the material.
         /// </summary>
-        [JsonProperty("roughnessFactor", NullValueHandling = NullValueHandling.Ignore)]
         public double? RoughnessFactor { get; set; }
     }
 
@@ -958,28 +820,23 @@ namespace glTFLib
     /// </summary>
     public partial class Mesh
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// An array of primitives, each defining geometry to be rendered with a material.
         /// </summary>
-        [JsonProperty("primitives")]
         public List<MeshPrimitive> Primitives { get; set; }
 
         /// <summary>
         /// Array of weights to be applied to the Morph Targets.
         /// </summary>
-        [JsonProperty("weights", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Weights { get; set; }
     }
 
@@ -994,38 +851,31 @@ namespace glTFLib
         /// A dictionary object, where each key corresponds to mesh attribute semantic and each value
         /// is the index of the accessor containing attribute's data.
         /// </summary>
-        [JsonProperty("attributes")]
         public Dictionary<string, long> Attributes { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The index of the accessor that contains the indices.
         /// </summary>
-        [JsonProperty("indices", NullValueHandling = NullValueHandling.Ignore)]
         public long? Indices { get; set; }
 
         /// <summary>
         /// The index of the material to apply to this primitive when rendering.
         /// </summary>
-        [JsonProperty("material", NullValueHandling = NullValueHandling.Ignore)]
         public long? Material { get; set; }
 
         /// <summary>
         /// The type of primitives to render.
         /// </summary>
-        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? Mode { get; set; }
 
         /// <summary>
         /// An array of Morph Targets, each  Morph Target is a dictionary mapping attributes (only
         /// `POSITION`, `NORMAL`, and `TANGENT` supported) to their deviations in the Morph Target.
         /// </summary>
-        [JsonProperty("targets", NullValueHandling = NullValueHandling.Ignore)]
         public List<Dictionary<string, long>> Targets { get; set; }
     }
 
@@ -1046,68 +896,56 @@ namespace glTFLib
         /// <summary>
         /// The index of the camera referenced by this node.
         /// </summary>
-        [JsonProperty("camera", NullValueHandling = NullValueHandling.Ignore)]
         public long? Camera { get; set; }
 
         /// <summary>
         /// The indices of this node's children.
         /// </summary>
-        [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
         public List<long> Children { get; set; }
 
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// A floating-point 4x4 transformation matrix stored in column-major order.
         /// </summary>
-        [JsonProperty("matrix", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Matrix { get; set; }
 
         /// <summary>
         /// The index of the mesh in this node.
         /// </summary>
-        [JsonProperty("mesh", NullValueHandling = NullValueHandling.Ignore)]
         public long? Mesh { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The node's unit quaternion rotation in the order (x, y, z, w), where w is the scalar.
         /// </summary>
-        [JsonProperty("rotation", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Rotation { get; set; }
 
         /// <summary>
         /// The node's non-uniform scale, given as the scaling factors along the x, y, and z axes.
         /// </summary>
-        [JsonProperty("scale", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Scale { get; set; }
 
         /// <summary>
         /// The index of the skin referenced by this node.
         /// </summary>
-        [JsonProperty("skin", NullValueHandling = NullValueHandling.Ignore)]
         public long? Skin { get; set; }
 
         /// <summary>
         /// The node's translation along the x, y, and z axes.
         /// </summary>
-        [JsonProperty("translation", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Translation { get; set; }
 
         /// <summary>
         /// The weights of the instantiated Morph Target. Number of elements must match number of
         /// Morph Targets of used mesh.
         /// </summary>
-        [JsonProperty("weights", NullValueHandling = NullValueHandling.Ignore)]
         public List<double> Weights { get; set; }
     }
 
@@ -1118,40 +956,33 @@ namespace glTFLib
     /// </summary>
     public partial class Sampler
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// Magnification filter.
         /// </summary>
-        [JsonProperty("magFilter", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? MagFilter { get; set; }
 
         /// <summary>
         /// Minification filter.
         /// </summary>
-        [JsonProperty("minFilter", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? MinFilter { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// s wrapping mode.
         /// </summary>
-        [JsonProperty("wrapS", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? WrapS { get; set; }
 
         /// <summary>
         /// t wrapping mode.
         /// </summary>
-        [JsonProperty("wrapT", NullValueHandling = NullValueHandling.Ignore)]
         public Extras? WrapT { get; set; }
     }
 
@@ -1162,22 +993,18 @@ namespace glTFLib
     /// </summary>
     public partial class Scene
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The indices of each root node.
         /// </summary>
-        [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<long> Nodes { get; set; }
     }
 
@@ -1188,10 +1015,8 @@ namespace glTFLib
     /// </summary>
     public partial class Skin
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
@@ -1199,26 +1024,22 @@ namespace glTFLib
         /// default is that each matrix is a 4x4 identity matrix, which implies that inverse-bind
         /// matrices were pre-applied.
         /// </summary>
-        [JsonProperty("inverseBindMatrices", NullValueHandling = NullValueHandling.Ignore)]
         public long? InverseBindMatrices { get; set; }
 
         /// <summary>
         /// Indices of skeleton nodes, used as joints in this skin.
         /// </summary>
-        [JsonProperty("joints")]
         public List<long> Joints { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The index of the node used as a skeleton root. When undefined, joints transforms resolve
         /// to scene root.
         /// </summary>
-        [JsonProperty("skeleton", NullValueHandling = NullValueHandling.Ignore)]
         public long? Skeleton { get; set; }
     }
 
@@ -1229,29 +1050,24 @@ namespace glTFLib
     /// </summary>
     public partial class Texture
     {
-        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
-        [JsonProperty("extras")]
         public object Extras { get; set; }
 
         /// <summary>
         /// The user-defined name of this object.
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// The index of the sampler used by this texture. When undefined, a sampler with repeat
         /// wrapping and auto filtering should be used.
         /// </summary>
-        [JsonProperty("sampler", NullValueHandling = NullValueHandling.Ignore)]
         public long? Sampler { get; set; }
 
         /// <summary>
         /// The index of the image used by this texture.
         /// </summary>
-        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public long? Source { get; set; }
     }
 
@@ -1286,6 +1102,11 @@ namespace glTFLib
                 new ExtrasConverter(),
                 new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
             },
+            
+            //Manual edits
+            NullValueHandling = NullValueHandling.Ignore,
+            DefaultValueHandling = DefaultValueHandling.Ignore,
+            ContractResolver = new CamelCaseCustomResolver()
         };
     }
 
