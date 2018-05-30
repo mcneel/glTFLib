@@ -23,6 +23,5 @@ The [`glTF-api.cs`](https://github.com/mcneel/glTFLib/blob/master/src/glTF-api.c
 `quicktype -s schema glTF.schema.json -l csharp -o glTF-api.cs --namespace glTFLib --csharp-version 6 --array-type list --number-type double --features complete --any-type object --no-combine-classes`
 
 ### TODO
-- Complete `glTFLibGen` console program to automate the generation of [`glTF-api.cs`](https://github.com/mcneel/glTFLib/blob/master/src/glTF-api.cs).
 - Create some example scenarios in [`glTFLibExample`](https://github.com/mcneel/glTFLib/tree/master/glTFLibExample).
  

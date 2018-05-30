@@ -186,7 +186,7 @@ namespace glTFLib
         /// <summary>
         /// Sparse storage of attributes that deviate from their initialization value.
         /// </summary>
-        public PurpleExtras Sparse { get; set; }
+        public AccessorSparse Sparse { get; set; }
 
         /// <summary>
         /// Specifies if the attribute is a scalar, vector, or matrix.
@@ -199,7 +199,7 @@ namespace glTFLib
     ///
     /// Sparse storage of attributes that deviate from their initialization value.
     /// </summary>
-    public partial class PurpleExtras
+    public partial class AccessorSparse
     {
         /// <summary>
         /// Number of entries stored in the sparse array.
@@ -214,14 +214,14 @@ namespace glTFLib
         /// Index array of size `count` that points to those accessor attributes that deviate from
         /// their initialization value. Indices must strictly increase.
         /// </summary>
-        public FluffyExtras Indices { get; set; }
+        public AccessorSparseIndices Indices { get; set; }
 
         /// <summary>
         /// Array of size `count` times number of components, storing the displaced accessor
         /// attributes pointed by `indices`. Substituted values must have the same `componentType`
         /// and number of components as the base accessor.
         /// </summary>
-        public TentacledExtras Values { get; set; }
+        public AccessorSparseValues Values { get; set; }
     }
 
     /// <summary>
@@ -232,7 +232,7 @@ namespace glTFLib
     ///
     /// Indices of those attributes that deviate from their initialization value.
     /// </summary>
-    public partial class FluffyExtras
+    public partial class AccessorSparseIndices
     {
         /// <summary>
         /// The index of the bufferView with sparse indices. Referenced bufferView can't have
@@ -265,7 +265,7 @@ namespace glTFLib
     /// Array of size `accessor.sparse.count` times number of components storing the displaced
     /// accessor attributes pointed by `accessor.sparse.indices`.
     /// </summary>
-    public partial class TentacledExtras
+    public partial class AccessorSparseValues
     {
         /// <summary>
         /// The index of the bufferView with sparse values. Referenced bufferView can't have
@@ -655,7 +655,7 @@ namespace glTFLib
         /// <summary>
         /// The emissive map texture.
         /// </summary>
-        public IndecentExtras EmissiveTexture { get; set; }
+        public TextureInfo EmissiveTexture { get; set; }
 
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
@@ -681,7 +681,7 @@ namespace glTFLib
         /// from Physically-Based Rendering (PBR) methodology. When not specified, all the default
         /// values of `pbrMetallicRoughness` apply.
         /// </summary>
-        public HilariousExtras PbrMetallicRoughness { get; set; }
+        public MaterialPbrMetallicRoughness PbrMetallicRoughness { get; set; }
     }
 
     /// <summary>
@@ -695,7 +695,7 @@ namespace glTFLib
     ///
     /// Reference to a texture.
     /// </summary>
-    public partial class IndecentExtras
+    public partial class TextureInfo
     {
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
@@ -780,7 +780,7 @@ namespace glTFLib
     /// A set of parameter values that are used to define the metallic-roughness material model
     /// from Physically-Based Rendering (PBR) methodology.
     /// </summary>
-    public partial class HilariousExtras
+    public partial class MaterialPbrMetallicRoughness
     {
         /// <summary>
         /// The material's base color factor.
@@ -790,7 +790,7 @@ namespace glTFLib
         /// <summary>
         /// The base color texture.
         /// </summary>
-        public IndecentExtras BaseColorTexture { get; set; }
+        public TextureInfo BaseColorTexture { get; set; }
 
         public Dictionary<string, Dictionary<string, object>> Extensions { get; set; }
 
@@ -804,7 +804,7 @@ namespace glTFLib
         /// <summary>
         /// The metallic-roughness texture.
         /// </summary>
-        public IndecentExtras MetallicRoughnessTexture { get; set; }
+        public TextureInfo MetallicRoughnessTexture { get; set; }
 
         /// <summary>
         /// The roughness of the material.
