@@ -3,6 +3,7 @@ using glTFLoader.Schema;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 namespace glTFLibExample
 {
@@ -17,8 +18,7 @@ namespace glTFLibExample
                 {
                     Generator = "glTFLib",
                     Copyright = "2021",
-                    Version = "0.1",
-                    MinVersion = "2.0"
+                    Version = "2.0"
                 }
             };
 
@@ -30,7 +30,7 @@ namespace glTFLibExample
                 Perspective = new CameraPerspective
                 {
                     Znear = 1f,
-                    Yfov = 35f,
+                    Yfov = 1f,
                     AspectRatio = 10
                 }
             };
@@ -62,6 +62,16 @@ namespace glTFLibExample
             model.Scenes = scenes.ToArray();
 
             Console.WriteLine( gltf.Interface.SerializeModel(model) );
+
+            string tempOutputFile = Path.GetTempFileName();
+            string glbOutputFile = Path.ChangeExtension(tempOutputFile, "glb");
+            string gltfOutputFile = Path.ChangeExtension(tempOutputFile, "gltf");
+
+            Console.WriteLine("Saving gltf to: " + gltfOutputFile);
+            gltf.Interface.SaveModel(model, gltfOutputFile);
+
+            Console.WriteLine("Saving glb to: " + glbOutputFile);
+            gltf.Interface.SaveBinaryModel(model, null, glbOutputFile);
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
