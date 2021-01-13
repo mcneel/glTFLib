@@ -46,9 +46,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\glTFLib.csproj">
-      <Project>{2f95241e-6138-408f-b2c9-83cc78a8d7f5}</Project>
-      <Name>glTFLib</Name>
+    <ProjectReference Include="..\glTF-CSharp-Loader\glTFLoader\glTFLoader.csproj">
+      <Project>{0eb8ea43-3654-4334-94f5-e514eb4a0bab}</Project>
+      <Name>glTFLoader</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

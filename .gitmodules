@@ -4,3 +4,6 @@
 [submodule "glTF-CSharp-Loader"]
 	path = glTF-CSharp-Loader
 	url = https://github.com/KhronosGroup/glTF-CSharp-Loader.git
+[submodule "glTF-Sample-Models"]
+	path = glTF-Sample-Models
+	url = https://github.com/KhronosGroup/glTF-Sample-Models.git
